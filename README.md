@@ -27,11 +27,11 @@
 
 ## ✅ About the project
 
-This repository was created to store lists of exercises and projects developed during the Programming Techniques discipline at the Federal University of Ceára in the period 2023.2.
+This repository was created to store lists of exercises and projects developed during the **Programming Techniques** discipline at the **Federal University of Ceára (UFC)** in the period 2023.2.
 
 ## 📖 About the discipline
 
-The discipline is focused on teaching object orientation and how it can be used during the development of applications in different languages. The Java language was used as a learning tool.
+The discipline is focused on teaching **Object Orientation** and how it can be used during the development of applications in different languages. The **Java** language was used as a learning tool with Eclipse IDE.
 
 ## 🛠️ Tools
 
