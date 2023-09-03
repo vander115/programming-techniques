@@ -27,7 +27,7 @@
 
 ## ✅ About the project
 
-This repository was created to store lists of exercises and projects developed during the Programming Techniques discipline at the Federal University of Ceára in the period 2023.3.
+This repository was created to store lists of exercises and projects developed during the Programming Techniques discipline at the Federal University of Ceára in the period 2023.2.
 
 ## 📖 About the discipline
 
