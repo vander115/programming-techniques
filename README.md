@@ -6,7 +6,7 @@
   Programming Techniques 💻
 </h3>
 
-<p align="center">Hello World!</p>
+<p align="center">System.out.println("Hello World!")</p>
 
 <p align="center">
   <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/vander115/programming-techniques?color=%23e11f21">
