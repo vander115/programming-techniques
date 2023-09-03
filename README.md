@@ -35,7 +35,7 @@ The discipline is focused on teaching object orientation and how it can be used 
 
 ## 🛠️ Tools
 
-Technologies that I used to develop this app
+Tools used in the development of this project/discipline.
 
 <div align="left"> 
   <div style="display: inline_block"><br>
