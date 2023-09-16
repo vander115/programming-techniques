@@ -2,6 +2,7 @@ package com.lists.list02;
 
 public class Utilities {
 
+	// Question01
 	public int sum(int arrayOfNumbers[]) {
 
 		int sum = 0;
@@ -13,6 +14,7 @@ public class Utilities {
 		return sum;
 	};
 
+	// Question02
 	public void showEvenNumbers(int initialNumber, int lastNumber) {
 
 		for (int i = initialNumber; i <= lastNumber; i++) {
@@ -23,6 +25,7 @@ public class Utilities {
 
 	}
 
+	// Question03
 	public double avaregeOfArrays(int array01[], int array02[]) {
 
 		int sum = sum(array01) + sum(array02);
@@ -204,6 +207,74 @@ public class Utilities {
 
 		// Se nenhum divisor foi encontrado, o número é primo
 		return true;
+	}
+
+//	public int[] getOccurrences(int array01[], int array02[]) {
+//		int minimumSize = Math.min(array01.length, array02.length);
+//		
+//		
+//		
+//		return;
+//	}
+
+	public int[] removeElement(int array[], int element) {
+		int elementOccurrences = 0;
+
+		for (int arrayElement : array) {
+			if (arrayElement == element) {
+				elementOccurrences++;
+			}
+		}
+
+		if (elementOccurrences == 0) {
+			return array;
+		}
+
+		int newArrayLength = array.length - elementOccurrences;
+
+		int updatedArray[] = new int[newArrayLength];
+
+		int i = 0;
+		for (int arrayElement : array) {
+			if (arrayElement != element) {
+				updatedArray[i] = arrayElement;
+				i++;
+			}
+		}
+
+		return updatedArray;
+	}
+
+	public boolean checkIsPalindrome(String string) {
+
+		String transformedString = string.toLowerCase();
+
+		int left = 0;
+		int right = string.length() - 1;
+
+		while (left < right) {
+			if (transformedString.charAt(left) != transformedString.charAt(right)) {
+				return false;
+			}
+			left++;
+			right--;
+		}
+
+		return true;
+	}
+
+	public String invertString(String string) {
+		char[] convertedString = string.toCharArray();
+
+		char[] invertedString = new char[convertedString.length];
+		int j = convertedString.length - 1;
+
+		for (int i = 0; i < convertedString.length; i++) {
+			invertedString[i] = convertedString[j];
+			j--;
+		}
+
+		return new String(invertedString);
 	}
 
 }
