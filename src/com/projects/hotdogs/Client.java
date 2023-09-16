@@ -1,4 +1,4 @@
-package com.projects.hotdog;
+package com.projects.hotdogs;
 
 public class Client {
 	private String name;

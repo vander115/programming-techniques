@@ -1,4 +1,4 @@
-package com.projects.hotdog;
+package com.projects.hotdogs;
 
 import java.util.ArrayList;
 import java.util.List;
