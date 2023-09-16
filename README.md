@@ -25,6 +25,9 @@
 - Lists
     - [List 01](https://github.com/vander115/programming-techniques/tree/72dff578234e4bc9bb9efd7628d8c6d45a189ad9/src/com/vander/list01)
 
+- Projects
+    - [Hot Dogs](https://github.com/vander115/programming-techniques/tree/master/src/com/projects/hotdogs)
+
 ## ✅ About the project
 
 This repository was created to store lists of exercises and projects developed during the **Programming Techniques** discipline at the **Federal University of Ceára (UFC)** in the period 2023.2.
