@@ -36,6 +36,7 @@ public class Utilities {
 		return avarage;
 	};
 
+	// Question 05
 	public int countElement(int array01[], int array02[], int element) {
 
 		int counter = 0;
@@ -54,6 +55,7 @@ public class Utilities {
 		return counter;
 	}
 
+	// Question 06
 	public int[] duplicateArray(int array[]) {
 
 		int duplicatedArray[] = new int[array.length];
@@ -66,6 +68,7 @@ public class Utilities {
 
 	}
 
+	// Question 07
 	public int[] sortInAscending(int array[]) {
 
 		int organizedArray[] = array;
@@ -95,6 +98,7 @@ public class Utilities {
 		return organizedArray;
 	}
 
+	// Complement of Question 10
 	public int[] sortInDescending(int array[]) {
 
 		int organizedArray[] = array;
@@ -124,6 +128,7 @@ public class Utilities {
 		return organizedArray;
 	}
 
+	// Question 08
 	public boolean checkOrderArray(int array[]) {
 
 		for (int i = 0; i < array.length - 1; i++) {
@@ -137,6 +142,7 @@ public class Utilities {
 		return true;
 	}
 
+	// Question 09
 	public int getKGreatestNumber(int array[], int k) {
 		int pivotArray[] = sortInDescending(array);
 
@@ -148,6 +154,7 @@ public class Utilities {
 
 	}
 
+	// Question 10
 	public int getKSmallestNumber(int array[], int k) {
 
 		int pivotArray[] = sortInAscending(array);
@@ -160,6 +167,7 @@ public class Utilities {
 
 	}
 
+	// Question 11
 	public boolean checkEquality(int array01[], int array02[]) {
 
 		if (array01.length != array02.length) {
@@ -175,8 +183,9 @@ public class Utilities {
 		return true;
 	}
 
-	public int potentiation(int base, int exponent) {
-		int result = 1;
+	// Question 12
+	public double potentiation(double base, int exponent) {
+		double result = 1.0;
 
 		if (exponent == 0) {
 			return result;
@@ -189,23 +198,20 @@ public class Utilities {
 		return result;
 	}
 
+	// Question 13 / Question 17
 	public boolean checkIsPrimeNumber(int number) {
 
 		if (number <= 1) {
 			return false;
 		}
 
-		// Verifica se o número é divisível por algum número inteiro de 2 até a raiz
-		// quadrada do número
 		for (int i = 2; i <= Math.sqrt(number); i++) {
 			if (number % i == 0) {
-				// O número é divisível por um número além de 1 e ele mesmo, portanto não é
-				// primo
+
 				return false;
 			}
 		}
 
-		// Se nenhum divisor foi encontrado, o número é primo
 		return true;
 	}
 
@@ -217,6 +223,7 @@ public class Utilities {
 //		return;
 //	}
 
+	// Question 15
 	public int[] removeElement(int array[], int element) {
 		int elementOccurrences = 0;
 
@@ -245,6 +252,7 @@ public class Utilities {
 		return updatedArray;
 	}
 
+	// Question 16
 	public boolean checkIsPalindrome(String string) {
 
 		String transformedString = string.toLowerCase();
@@ -263,6 +271,7 @@ public class Utilities {
 		return true;
 	}
 
+	// Question 18
 	public String invertString(String string) {
 		char[] convertedString = string.toCharArray();
 
@@ -275,6 +284,33 @@ public class Utilities {
 		}
 
 		return new String(invertedString);
+	}
+
+	// Question 19
+	public double calculateCompoundInterest(double capital, double interestRate, int period) {
+		return (capital * potentiation((1 + interestRate), period));
+	}
+
+	// Question 20
+	public boolean checkIsPerfectNumber(int number) {
+
+		if (number <= 0) {
+			return false;
+		}
+
+		int sumOfDividers = 0;
+
+		for (int i = 1; i < number; i++) {
+			if (number % i == 0) {
+				sumOfDividers += i;
+				System.out.print(i + " ");
+			}
+		}
+
+		System.out.println("\n" + sumOfDividers);
+
+		return sumOfDividers == number;
+
 	}
 
 }
