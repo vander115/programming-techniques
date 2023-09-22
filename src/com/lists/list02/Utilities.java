@@ -1,316 +1,371 @@
 package com.lists.list02;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 public class Utilities {
 
-	// Question01
-	public int sum(int arrayOfNumbers[]) {
+    // Question01
+    public int sumWithoutBorders(int[] arrayOfNumbers) {
 
-		int sum = 0;
+        int sum = 0;
 
-		for (int number : arrayOfNumbers) {
-			sum += number;
-		}
+        for (int i = 2; i < arrayOfNumbers.length - 2; i++) {
+            sum += arrayOfNumbers[i];
+        }
 
-		return sum;
-	};
+        return sum;
+    }
 
-	// Question02
-	public void showEvenNumbers(int initialNumber, int lastNumber) {
+    ;
 
-		for (int i = initialNumber; i <= lastNumber; i++) {
-			if (i % 2 == 0) {
-				System.out.print(i + " ");
-			}
-		}
+    // Question02
+    public void showEvenNumbers(int initialNumber, int lastNumber) {
 
-	}
+        for (int i = initialNumber; i <= lastNumber; i++) {
+            if (i % 2 == 0) {
+                System.out.print(i + " ");
+            }
+        }
 
-	// Question03
-	public double avaregeOfArrays(int array01[], int array02[]) {
+    }
 
-		int sum = sum(array01) + sum(array02);
-		int length = array01.length + array02.length;
+    public int sum(int[] arrayOfNumber) {
+        int sum = 0;
 
-		double avarage = (double) sum / length;
+        for (int number : arrayOfNumber) {
+            sum += number;
+        }
 
-		return avarage;
-	};
+        return sum;
+    }
 
-	// Question 05
-	public int countElement(int array01[], int array02[], int element) {
+    // Question03
+    public double avaregeOfArrays(int[] array01, int[] array02) {
 
-		int counter = 0;
+        int sum = sum(array01) + sum(array02);
+        int length = array01.length + array02.length;
 
-		for (int numberOfArray : array01) {
-			if (numberOfArray == element) {
-				counter++;
-			}
-		}
-		for (int numberOfArray : array02) {
-			if (numberOfArray == element) {
-				counter++;
-			}
-		}
+        double avarage = (double) sum / length;
 
-		return counter;
-	}
+        return avarage;
+    }
 
-	// Question 06
-	public int[] duplicateArray(int array[]) {
+    ;
 
-		int duplicatedArray[] = new int[array.length];
+    // Question 05
+    public int countElement(int[] array01, int[] array02, int element) {
 
-		for (int i = 0; i < array.length; i++) {
-			duplicatedArray[i] = array[i];
-		}
+        int counter = 0;
 
-		return duplicatedArray;
+        for (int numberOfArray : array01) {
+            if (numberOfArray == element) {
+                counter++;
+            }
+        }
+        for (int numberOfArray : array02) {
+            if (numberOfArray == element) {
+                counter++;
+            }
+        }
 
-	}
+        return counter;
+    }
 
-	// Question 07
-	public int[] sortInAscending(int array[]) {
+    // Question 06
+    public int[] duplicateArray(int[] array) {
 
-		int organizedArray[] = array;
+        int[] duplicatedArray = new int[array.length];
 
-		int n = organizedArray.length;
-		int pivot;
-		boolean wasChanged;
+        for (int i = 0; i < array.length; i++) {
+            duplicatedArray[i] = array[i];
+        }
 
-		do {
-			wasChanged = false;
+        return duplicatedArray;
 
-			for (int i = 0; i < n - 1; i++) {
+    }
 
-				if (organizedArray[i] > organizedArray[i + 1]) {
+    // Question 07
+    public int[] sortInAscending(int[] array) {
 
-					pivot = organizedArray[i];
-					organizedArray[i] = organizedArray[i + 1];
-					organizedArray[i + 1] = pivot;
-					wasChanged = true;
+        int[] organizedArray = array;
 
-				}
+        int n = organizedArray.length;
+        int pivot;
+        boolean wasChanged;
 
-			}
+        do {
+            wasChanged = false;
 
-		} while (wasChanged);
+            for (int i = 0; i < n - 1; i++) {
 
-		return organizedArray;
-	}
+                if (organizedArray[i] > organizedArray[i + 1]) {
 
-	// Complement of Question 10
-	public int[] sortInDescending(int array[]) {
+                    pivot = organizedArray[i];
+                    organizedArray[i] = organizedArray[i + 1];
+                    organizedArray[i + 1] = pivot;
+                    wasChanged = true;
 
-		int organizedArray[] = array;
+                }
 
-		int n = organizedArray.length;
-		int pivot;
-		boolean wasChanged;
+            }
 
-		do {
-			wasChanged = false;
+        } while (wasChanged);
 
-			for (int i = 0; i < n - 1; i++) {
+        return organizedArray;
+    }
 
-				if (organizedArray[i] < organizedArray[i + 1]) {
 
-					pivot = organizedArray[i];
-					organizedArray[i] = organizedArray[i + 1];
-					organizedArray[i + 1] = pivot;
-					wasChanged = true;
+    // Question 08
+    public boolean checkOrderArray(int[] array) {
 
-				}
+        for (int i = 0; i < array.length - 1; i++) {
 
-			}
+            if (array[i] > array[i + 1]) {
+                return false;
+            }
 
-		} while (wasChanged);
+        }
 
-		return organizedArray;
-	}
+        return true;
+    }
 
-	// Question 08
-	public boolean checkOrderArray(int array[]) {
+    // Question 09
+    public int getKGreatestNumber(int[] array, int k) {
+        int[] pivotArray = sortInDescending(array);
 
-		for (int i = 0; i < array.length - 1; i++) {
+        if (k > array.length) {
+            return 0;
+        } else {
+            return pivotArray[k - 1];
+        }
 
-			if (array[i] > array[i + 1]) {
-				return false;
-			}
+    }
 
-		}
+    // Complement of Question 10
+    public int[] sortInDescending(int[] array) {
 
-		return true;
-	}
+        int[] organizedArray = array;
 
-	// Question 09
-	public int getKGreatestNumber(int array[], int k) {
-		int pivotArray[] = sortInDescending(array);
+        int n = organizedArray.length;
+        int pivot;
+        boolean wasChanged;
 
-		if (k > array.length) {
-			return 0;
-		} else {
-			return pivotArray[k - 1];
-		}
+        do {
+            wasChanged = false;
 
-	}
+            for (int i = 0; i < n - 1; i++) {
 
-	// Question 10
-	public int getKSmallestNumber(int array[], int k) {
+                if (organizedArray[i] < organizedArray[i + 1]) {
 
-		int pivotArray[] = sortInAscending(array);
+                    pivot = organizedArray[i];
+                    organizedArray[i] = organizedArray[i + 1];
+                    organizedArray[i + 1] = pivot;
+                    wasChanged = true;
 
-		if (k > array.length) {
-			return 0;
-		} else {
-			return pivotArray[k - 1];
-		}
+                }
 
-	}
+            }
 
-	// Question 11
-	public boolean checkEquality(int array01[], int array02[]) {
+        } while (wasChanged);
 
-		if (array01.length != array02.length) {
-			return false;
-		}
+        return organizedArray;
+    }
 
-		for (int i = 0; i < array01.length; i++) {
-			if (array01[i] != array02[i]) {
-				return false;
-			}
-		}
+    // Question 10
+    public int getKSmallestNumber(int[] array, int k) {
 
-		return true;
-	}
+        int[] pivotArray = sortInAscending(array);
 
-	// Question 12
-	public double potentiation(double base, int exponent) {
-		double result = 1.0;
+        if (k > array.length) {
+            return 0;
+        } else {
+            return pivotArray[k - 1];
+        }
 
-		if (exponent == 0) {
-			return result;
-		}
+    }
 
-		for (int i = 0; i < exponent; i++) {
-			result *= base;
-		}
+    // Question 11
+    public boolean checkEquality(int[] array01, int[] array02) {
 
-		return result;
-	}
+        if (array01.length != array02.length) {
+            return false;
+        }
 
-	// Question 13 / Question 17
-	public boolean checkIsPrimeNumber(int number) {
+        for (int i = 0; i < array01.length; i++) {
+            if (array01[i] != array02[i]) {
+                return false;
+            }
+        }
 
-		if (number <= 1) {
-			return false;
-		}
+        return true;
+    }
 
-		for (int i = 2; i <= Math.sqrt(number); i++) {
-			if (number % i == 0) {
+    // Question 12
+    public double potentiation(double base, int exponent) {
+        double result = 1.0;
 
-				return false;
-			}
-		}
+        if (exponent == 0) {
+            return result;
+        }
 
-		return true;
-	}
+        for (int i = 0; i < exponent; i++) {
+            result *= base;
+        }
 
-//	public int[] getOccurrences(int array01[], int array02[]) {
-//		int minimumSize = Math.min(array01.length, array02.length);
-//		
-//		
-//		
-//		return;
-//	}
+        return result;
+    }
 
-	// Question 15
-	public int[] removeElement(int array[], int element) {
-		int elementOccurrences = 0;
+    // Question 13 / Question 17
+    public boolean checkIsPrimeNumber(int number) {
 
-		for (int arrayElement : array) {
-			if (arrayElement == element) {
-				elementOccurrences++;
-			}
-		}
+        if (number <= 1) {
+            return false;
+        }
 
-		if (elementOccurrences == 0) {
-			return array;
-		}
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
 
-		int newArrayLength = array.length - elementOccurrences;
+                return false;
+            }
+        }
 
-		int updatedArray[] = new int[newArrayLength];
+        return true;
+    }
 
-		int i = 0;
-		for (int arrayElement : array) {
-			if (arrayElement != element) {
-				updatedArray[i] = arrayElement;
-				i++;
-			}
-		}
+    public int[] getOccurrences(int[] array01, int[] array02) {
+        Set<Integer> occurrencesSet = new HashSet<>();
+        List<Integer> occurrencesList = new ArrayList<>();
 
-		return updatedArray;
-	}
+        for (int element1 : array01) {
+            for (int element2 : array02) {
+                if (element1 == element2 && !occurrencesSet.contains(element1)) {
+                    occurrencesSet.add(element1);
+                    occurrencesList.add(element1);
+                    break;
+                }
+            }
+        }
 
-	// Question 16
-	public boolean checkIsPalindrome(String string) {
+        int[] commonOccurrences = new int[occurrencesList.size()];
+        for (int i = 0; i < occurrencesList.size(); i++) {
+            commonOccurrences[i] = occurrencesList.get(i);
+        }
 
-		String transformedString = string.toLowerCase();
+        return commonOccurrences;
+    }
 
-		int left = 0;
-		int right = string.length() - 1;
+    // Question 15
+    public int[] removeElement(int[] array, int element) {
+        int elementOccurrences = 0;
 
-		while (left < right) {
-			if (transformedString.charAt(left) != transformedString.charAt(right)) {
-				return false;
-			}
-			left++;
-			right--;
-		}
+        for (int arrayElement : array) {
+            if (arrayElement == element) {
+                elementOccurrences++;
+            }
+        }
 
-		return true;
-	}
+        if (elementOccurrences == 0) {
+            return array;
+        }
 
-	// Question 18
-	public String invertString(String string) {
-		char[] convertedString = string.toCharArray();
+        int newArrayLength = array.length - elementOccurrences;
 
-		char[] invertedString = new char[convertedString.length];
-		int j = convertedString.length - 1;
+        int[] updatedArray = new int[newArrayLength];
 
-		for (int i = 0; i < convertedString.length; i++) {
-			invertedString[i] = convertedString[j];
-			j--;
-		}
+        int i = 0;
+        for (int arrayElement : array) {
+            if (arrayElement != element) {
+                updatedArray[i] = arrayElement;
+                i++;
+            }
+        }
 
-		return new String(invertedString);
-	}
+        return updatedArray;
+    }
 
-	// Question 19
-	public double calculateCompoundInterest(double capital, double interestRate, int period) {
-		return (capital * potentiation((1 + interestRate), period));
-	}
+    // Question 16
+    public boolean checkIsPalindrome(String string) {
 
-	// Question 20
-	public boolean checkIsPerfectNumber(int number) {
+        String transformedString = string.toLowerCase();
 
-		if (number <= 0) {
-			return false;
-		}
+        int left = 0;
+        int right = string.length() - 1;
 
-		int sumOfDividers = 0;
+        while (left < right) {
+            if (transformedString.charAt(left) != transformedString.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
 
-		for (int i = 1; i < number; i++) {
-			if (number % i == 0) {
-				sumOfDividers += i;
-				System.out.print(i + " ");
-			}
-		}
+        return true;
+    }
 
-		System.out.println("\n" + sumOfDividers);
+    // Question 18
+    public String invertString(String string) {
+        char[] convertedString = string.toCharArray();
 
-		return sumOfDividers == number;
+        char[] invertedString = new char[convertedString.length];
+        int j = convertedString.length - 1;
 
-	}
+        for (int i = 0; i < convertedString.length; i++) {
+            invertedString[i] = convertedString[j];
+            j--;
+        }
 
+        return new String(invertedString);
+    }
+
+    // Question 19
+    public double calculateCompoundInterest(double capital, double interestRate, int period) {
+        return (capital * potentiation((1 + interestRate), period));
+    }
+
+    // Question 20
+    public boolean checkIsPerfectNumber(int number) {
+
+        if (number <= 0) {
+            return false;
+        }
+
+        int sumOfDividers = 0;
+
+        for (int i = 1; i < number; i++) {
+            if (number % i == 0) {
+                sumOfDividers += i;
+                System.out.print(i + " ");
+            }
+        }
+
+        System.out.println("\n" + sumOfDividers);
+
+        return sumOfDividers == number;
+
+    }
+
+    public int[] decreaseArray(int initialSize) {
+        int currentSize = initialSize;
+        int[] array = new int[initialSize];
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = i + 1;
+        }
+
+        while (currentSize > 1) {
+            currentSize--;
+            int[] newArray = new int[currentSize];
+
+            for (int i = 0; i < newArray.length; i++) {
+                newArray[i] = i + 1;
+            }
+
+            array = newArray;
+        }
+
+        return array;
+    }
 }
