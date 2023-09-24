@@ -24,6 +24,7 @@
 
 - Lists
     - [List 01](https://github.com/vander115/programming-techniques/tree/72dff578234e4bc9bb9efd7628d8c6d45a189ad9/src/com/vander/list01)
+    - [List 02](https://github.com/vander115/programming-techniques/tree/76e67abdda942bb8dd713ed00a876f2914cc1200/src/com/lists/list02)
 
 - Projects
     - [Hot Dogs](https://github.com/vander115/programming-techniques/tree/master/src/com/projects/hotdogs)
