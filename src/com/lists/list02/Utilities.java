@@ -19,8 +19,6 @@ public class Utilities {
         return sum;
     }
 
-    ;
-
     // Question02
     public void showEvenNumbers(int initialNumber, int lastNumber) {
 
@@ -48,12 +46,8 @@ public class Utilities {
         int sum = sum(array01) + sum(array02);
         int length = array01.length + array02.length;
 
-        double avarage = (double) sum / length;
-
-        return avarage;
+        return (double) sum / length;
     }
-
-    ;
 
     // Question 05
     public int countElement(int[] array01, int[] array02, int element) {
@@ -90,9 +84,7 @@ public class Utilities {
     // Question 07
     public int[] sortInAscending(int[] array) {
 
-        int[] organizedArray = array;
-
-        int n = organizedArray.length;
+        int n = array.length;
         int pivot;
         boolean wasChanged;
 
@@ -101,11 +93,11 @@ public class Utilities {
 
             for (int i = 0; i < n - 1; i++) {
 
-                if (organizedArray[i] > organizedArray[i + 1]) {
+                if (array[i] > array[i + 1]) {
 
-                    pivot = organizedArray[i];
-                    organizedArray[i] = organizedArray[i + 1];
-                    organizedArray[i + 1] = pivot;
+                    pivot = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = pivot;
                     wasChanged = true;
 
                 }
@@ -114,7 +106,7 @@ public class Utilities {
 
         } while (wasChanged);
 
-        return organizedArray;
+        return array;
     }
 
 
@@ -147,9 +139,7 @@ public class Utilities {
     // Complement of Question 10
     public int[] sortInDescending(int[] array) {
 
-        int[] organizedArray = array;
-
-        int n = organizedArray.length;
+        int n = array.length;
         int pivot;
         boolean wasChanged;
 
@@ -158,11 +148,11 @@ public class Utilities {
 
             for (int i = 0; i < n - 1; i++) {
 
-                if (organizedArray[i] < organizedArray[i + 1]) {
+                if (array[i] < array[i + 1]) {
 
-                    pivot = organizedArray[i];
-                    organizedArray[i] = organizedArray[i + 1];
-                    organizedArray[i + 1] = pivot;
+                    pivot = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = pivot;
                     wasChanged = true;
 
                 }
@@ -171,7 +161,7 @@ public class Utilities {
 
         } while (wasChanged);
 
-        return organizedArray;
+        return array;
     }
 
     // Question 10
@@ -347,6 +337,7 @@ public class Utilities {
 
     }
 
+    // Question 21
     public int[] decreaseArray(int initialSize) {
         int currentSize = initialSize;
         int[] array = new int[initialSize];
@@ -367,5 +358,59 @@ public class Utilities {
         }
 
         return array;
+    }
+
+    // Question 22
+    public static void showForms(int n) {
+
+        for (int row = 0; row < n; row++) {
+
+            for (int column = 0; column <= row; column++) {
+                System.out.print(column + " ");
+            }
+            System.out.println();
+        }
+
+        for (int row = 0; row < n; row++) {
+
+            for (int column = 0; column < n; column++) {
+
+                if ((row + column) % 2 == 0) {
+                    System.out.print("* ");
+                } else {
+                    System.out.print("@ ");
+                }
+            }
+            System.out.println();
+        }
+
+        for (int row = 0; row < n; row++) {
+
+            for (int column = 0; column < n; column++) {
+
+                if (column == n / 2 || row == n / 2) {
+                    System.out.print("@ ");
+                } else {
+
+                    int number = Math.abs(column - n / 2) + Math.abs(row - n / 2);
+                    System.out.print(number + " ");
+                }
+            }
+            System.out.println();
+        }
+
+        for (int row = 0; row < n; row++) {
+
+            for (int column = 0; column < n; column++) {
+
+                if (row == 0 || row == n - 1 || column == 0 || column == n - 1) {
+                    System.out.print(Math.abs(row - column) + " ");
+                } else {
+
+                    System.out.print("* ");
+                }
+            }
+            System.out.println();
+        }
     }
 }
